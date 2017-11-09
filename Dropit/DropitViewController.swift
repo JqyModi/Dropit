@@ -13,6 +13,16 @@ class DropitViewController: UIViewController {
     @IBOutlet weak var gameView: UIView!
     //创建重力场
     let gravity = UIGravityBehavior()
+    //创建碰撞行为
+    lazy var collider: UICollisionBehavior = {
+       let lazilyCreatedCollider = UICollisionBehavior()
+        //设置gameView的边界为动画边界
+        lazilyCreatedCollider.translatesReferenceBoundsIntoBoundary = true
+        return lazilyCreatedCollider
+    }()
+    
+    let dropBehavior = DropitBehavior()
+    
     //创建力学动画
 //    var animator: UIDynamicAnimator = UIDynamicAnimator(referenceView: gameView) //不能直接引用gameView因为还没有初始化
     //解决上面问题：lazy
@@ -22,10 +32,27 @@ class DropitViewController: UIViewController {
         return lazilyCreatedDynamicAnimator
     }()
     
+    private struct PathNames {
+        static let MiddleBarrier = "Middle Barrier"
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //添加新的碰撞边界
+        let barrierSize = dropSize
+        let barrierOrigin = CGPoint(x: gameView.bounds.maxX - barrierSize.width/2, y: gameView.bounds.maxY - barrierSize.height/2)
+        let bezierPath = UIBezierPath(ovalIn: CGRect(origin: barrierOrigin, size: barrierSize))
+        //添加边界到dropBehavior中
+        dropBehavior.addBarrier(path: bezierPath, named: PathNames.MiddleBarrier)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //添加重力场到力学动画
-        animator.addBehavior(gravity)
+//        animator.addBehavior(gravity)
+        //添加碰撞动画效果
+//        animator.addBehavior(collider)
+        animator.addBehavior(dropBehavior)
     }
     
     var dropsPerRow = 10
@@ -48,7 +75,11 @@ class DropitViewController: UIViewController {
         gameView.addSubview(dropView)
         
         //给View添加重力场动画: UIDynamicItem是一个协议：UIView已经实现了该协议
-        gravity.addItem(dropView)
+//        gravity.addItem(dropView)
+        //给View添加碰撞动画
+//        collider.addItem(dropView)
+        
+        dropBehavior.addDrop(drop: dropView)
         
     }
 }
