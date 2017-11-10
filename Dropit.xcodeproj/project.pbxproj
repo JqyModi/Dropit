@@ -14,6 +14,7 @@
 		043EF2811FB442D500B7F505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043EF27F1FB442D500B7F505 /* LaunchScreen.storyboard */; };
 		043EF28C1FB442D500B7F505 /* DropitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF28B1FB442D500B7F505 /* DropitTests.swift */; };
 		043EF2971FB442D500B7F505 /* DropitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF2961FB442D500B7F505 /* DropitUITests.swift */; };
+		04577E371FB52AF90044CC88 /* BezierPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04577E361FB52AF90044CC88 /* BezierPathView.swift */; };
 		04AA1C601FB49F9500A00B89 /* DropitBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA1C5F1FB49F9500A00B89 /* DropitBehavior.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		043EF2921FB442D500B7F505 /* DropitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		043EF2961FB442D500B7F505 /* DropitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropitUITests.swift; sourceTree = "<group>"; };
 		043EF2981FB442D500B7F505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04577E361FB52AF90044CC88 /* BezierPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPathView.swift; sourceTree = "<group>"; };
 		04AA1C5F1FB49F9500A00B89 /* DropitBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropitBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				043EF27A1FB442D500B7F505 /* Main.storyboard */,
 				043EF2821FB442D500B7F505 /* Info.plist */,
 				04AA1C5F1FB49F9500A00B89 /* DropitBehavior.swift */,
+				04577E361FB52AF90044CC88 /* BezierPathView.swift */,
 			);
 			path = Dropit;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04577E371FB52AF90044CC88 /* BezierPathView.swift in Sources */,
 				043EF2791FB442D500B7F505 /* DropitViewController.swift in Sources */,
 				043EF2771FB442D500B7F505 /* AppDelegate.swift in Sources */,
 				04AA1C601FB49F9500A00B89 /* DropitBehavior.swift in Sources */,

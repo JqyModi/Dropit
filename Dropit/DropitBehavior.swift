@@ -36,9 +36,9 @@ class DropitBehavior: UIDynamicBehavior {
         addChildBehavior(dropBehavior)
     }
     
-    func addBarrier(path: UIBezierPath, named name: String) {
-        collider.removeBoundary(withIdentifier: name as NSCopying)
-        collider.addBoundary(withIdentifier: name as NSCopying, for: path)
+    func addBarrier(path: UIBezierPath, named name: NSString) {
+        collider.removeBoundary(withIdentifier: name)
+        collider.addBoundary(withIdentifier: name, for: path)
     }
     
     func addDrop(drop: UIView){
